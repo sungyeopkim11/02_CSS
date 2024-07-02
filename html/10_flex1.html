@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_ flex1 </title>
+  
+  <link rel="stylesheet" href="../css/flex-style.css">
+  <link rel="stylesheet" href="../css/10_flex1.css">
+</head>
+<body>
+  <h1> display : flex  (Flex Box)</h1>
+
+  <pre>
+    요소의 정렬되는 방향, 순서, 요소간의 간격을
+    하나 하나 수치적으로 처리하지 않아도 
+    브라우저가 알아서 유연하게 처리해 표시하는 방식 
+
+    <b>flex 이용 시 반드시 알아야 하는 것!!!!</b>
+
+    <i>1. flex 구성</i>
+    - flex container :
+         유연하게 처리할 대상(요소)을 감싸고 있는 요소
+
+    - item : 유연하게 처리할 대상(요소)
+
+    (flex 관련 속성은 flex container 전용 속성, item 전용 속성으로 나뉨)
+
+
+    <i>2. flex의 축(axis)</i>
+
+    2차원 평면에 요소를 유연하게 배치하기 위해
+    배치될 평면의
+    - 중심축 (main axis)
+    - 교차축 (cross axis)
+  </pre>
+
+  <hr>
+  <h3>아이템 정렬</h3>
+  <div class="flex-container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+    <div class="item item5">item5</div>
+    <div class="item item6">item6</div>
+    <div class="item item7">item7</div>
+    <div class="item item8">item8</div>
+    <div class="item item9">item9</div>
+  </div>
+
+
+  <pre>
+    <b>flex container 전용 속성 1</b>
+
+    <i>1. display : flex </i>
+    - 감싸는 요소를 flex 형식으로 변경
+        -> 내부에 작성되는 item을 유연하게 배치하겠다는 의미
+
+    - 해당 속성이 적용되면 유연하게 배치할 수 있도록
+        내부 item의 자동으로 지정된 margin 속성이 사라진다.
+
+
+    <i>2. flex-direction : 중심축의 방향, 시작/끝 지정</i>
+    - row (기본값)   : x축, L -> R
+    - row-reverse    : x축, R -> L
+    - column         : y축, U -> D
+    - column-reverse : y축, D -> U
+
+    <i>3. justify-content : 중심축 방향을 기준으로 item 정렬</i>
+    - flex-start : 중심축 시작 지점을 기준으로 정렬
+    - flex-end : 중심축 끝 지점을 기준으로 정렬(순서가 뒤집히진 않음)
+    - center : 중심축 가운데 정렬
+
+    - space-around : item에 중심축 방향으로 일정한 간격을 부여
+    - space-evenly : item에 중심축 방향으로 동일한 간격을 부여
+    - space-between : item에 중심축 방향으로 동일한 간격을 부여
+                        단, 양 끝은 flex-container에 붙게 한다
+
+
+    <i>4. align-items : 교차축을 기준으로 item 정렬</i>
+    - strech (기본값): item을 교차축 방향으로 꽉 찰만큼 늘림
+                단, item에 교차축 방향 크기가 지정되어 있다면 적용 X
+
+    - flex-start : 교차축 시작 지점에 배치
+    - flex-end : 교차축 끝 지점에 배치
+    - center : 교차축 가운데 지점에 배치
+
+    - baseline :  item에 작성된 내용(content)이
+                한 직선에 배치될 수 있도록
+                item을 교차축 방향을 알맞게 움직여 배치
+  </pre>
+
+
+  <div class="flex-contianer">
+    <img src="data:image/jpeg;base64,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">
+    width
+  
+  </div>
+
+  <h3>두산 베어스</h3>
+  <div class="flex-container">
+    <div class="item item1">정수빈</div>
+    <div class="item item2">허경민</div>
+    <div class="item item3">라모스</div>
+    <div class="item item4">양의지</div>
+    <div class="item item5">김재환</div>
+    <div class="item item6">양석환</div>
+    <div class="item item7">강승호</div>
+    <div class="item item8">박준영</div>
+    <div class="item item9">조수행</div>
+  </div>
+  
+
+  
+</body>
+</html>

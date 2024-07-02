@@ -1,0 +1,45 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+div, header, main, footer, section{
+  border: 1px solid black;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+}
+
+.header-1{height: 50px; width: 30%}
+.header-2{height: 50px;
+          flex-grow: 1;}
+
+
+.main{
+  display: flex;
+  flex-direction: column;}
+
+.main-1{ height: 200px;}
+.main-2{ height: 100px;}
+.main-3{ height: 80px; margin: 20px;}
+
+.row{
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+
+.col{
+  height: 100%;
+  width: 25%;
+}
+
+.footer{height: 100px;}
+
+
+
+      
